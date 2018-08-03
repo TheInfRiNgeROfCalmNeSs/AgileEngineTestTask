@@ -9,6 +9,8 @@ Run `npm start` for a dev server.
 
 ## Notes
 + Text sample is given in `text.service.js`
-+ Given files structure is not obligatory and could be changed
++ For
 
-
+## Usage
++ Click some provided word (or word combination), then apply bold, italic, underline styles or all at the same time.
++ Also you can select some synonyms for word (or word combination)  
