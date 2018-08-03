@@ -3,13 +3,22 @@ import './FileZone.css';
 
 class FileZone extends Component {
     render() {
-    	const textToEditor = this.props.textToEditor
-    	let splittedText = textToEditor.split(" ")
-    	let textInDivs = splittedText.map((word, ind) => <div key={ind} data-word={ind}>{word}</div>)
-    	console.log('textInDivs', textInDivs)
+    	//console.log('textInDivs', this.props.textToEditor)
         return (
             <div id="file-zone">
-                <div id="file">{textInDivs}</div>
+                <div id="file" contentEditable="true" suppressContentEditableWarning="true">{this.props.textToEditor}</div>
+                <div id="synonyms">
+                    {
+                        this.props.synonymsArray!==null?
+                            this.props.synonymsArray.map(synonym => {
+                                return (
+                                    <div className="synonym">word: {synonym.word}, score: {synonym.score}</div>
+                                )
+                            })
+                        :
+                            null
+                    }
+                </div>
             </div>
         );
     }
