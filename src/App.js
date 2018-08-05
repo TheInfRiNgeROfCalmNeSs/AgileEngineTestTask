@@ -41,7 +41,7 @@ class App extends Component {
     }
     findWordSynonyms() {
         if(this.state.selectedWord) {
-            axios.get(`http://api.datamuse.com/words?ml=${this.state.selectedWord.innerText}`)
+            axios.get(`http://api.datamuse.com/words?ml=${this.state.selectedWord.innerText.replace(/[.,]*$/, '')}`)
             .then((response) => {
                 console.log(response);
                 this.setState({synonymsArray: response.data})
