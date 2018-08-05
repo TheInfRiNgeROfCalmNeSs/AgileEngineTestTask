@@ -10,9 +10,9 @@ class FileZone extends Component {
                 <div id="synonyms">
                     {
                         this.props.synonymsArray!==null?
-                            this.props.synonymsArray.map(synonym => {
+                            this.props.synonymsArray.map((synonym, key) => {
                                 return (
-                                    <div className="synonym">word: {synonym.word}, score: {synonym.score}</div>
+                                    <div key={key} className="synonym">word: {synonym.word}, score: {synonym.score}</div>
                                 )
                             })
                         :
