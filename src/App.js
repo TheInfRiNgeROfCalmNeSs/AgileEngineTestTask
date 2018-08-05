@@ -18,10 +18,10 @@ class App extends Component {
         getMockText().then(result => this.setState({textToEditor: result}));
     }
     testClick(proxy) {
-        //console.log('testClick', proxy.target.dataset.word)
+        //console.log('testClick', proxy.target.parentNode.dataset.word, proxy.target.dataset.word, proxy.target.closest('.someWord').dataset.word)
         /* function for selecting one word, but not a whole sentence */
-        this.selectText(`#someWord${proxy.target.dataset.word}`)
-        this.setState({selectedWord: `#someWord${proxy.target.dataset.word}`})
+        this.selectText(`#someWord${proxy.target.closest('.someWord').dataset.word}`)
+        this.setState({selectedWord: proxy.target.closest('.someWord').dataset.word})
     }
     selectText(node) {
         node = document.querySelectorAll(node)[0];
