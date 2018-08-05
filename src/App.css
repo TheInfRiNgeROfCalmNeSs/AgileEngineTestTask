@@ -20,11 +20,6 @@ main {
   flex-grow: 1;
 }
 
-.findWordSynonymsButton, .hint {
-  width: 12%;
-  margin: 0 auto;
-}
-
 .hint {
   width: 30%;
   margin: 1% auto;

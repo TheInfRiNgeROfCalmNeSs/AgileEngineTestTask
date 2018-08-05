@@ -18,6 +18,7 @@ class ControlPanel extends Component {
                     <button className="format-action" type="button" onClick={this.makeWordBold}><b>B</b></button>
                     <button className="format-action" type="button" onClick={this.makeWordItalic}><i>I</i></button>
                     <button className="format-action" type="button" onClick={this.makeWordUnderlined}><u>U</u></button>
+                    <button className="format-action" type="button" onClick={this.props.findWordSynonyms}>Find Synonyms</button>
                 </div>
             </div>
         );

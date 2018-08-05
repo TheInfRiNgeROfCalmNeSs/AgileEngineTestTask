@@ -62,8 +62,7 @@ class App extends Component {
                     <span>Simple Text Editor</span>
                 </header>
                 <main>
-                    <ControlPanel />
-                    <button className="findWordSynonymsButton" type="button" onClick={this.findWordSynonyms.bind(this)}>Find Synonyms</button>
+                    <ControlPanel findWordSynonyms={this.findWordSynonyms.bind(this)} />
                     <div className="hint">Click any Word, then apply style formatting or find some synonyms</div>
                     <FileZone textToEditor={textInDivs} synonymsArray={this.state.synonymsArray} />
                 </main>
