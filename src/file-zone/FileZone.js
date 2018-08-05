@@ -12,7 +12,10 @@ class FileZone extends Component {
                         this.props.synonymsArray!==null?
                             this.props.synonymsArray.map((synonym, key) => {
                                 return (
-                                    <div key={key} className="synonym">word: {synonym.word}, score: {synonym.score}</div>
+                                    <div key={key} className="synonym">
+                                        word: {synonym.word}, score: {synonym.score}
+                                        <button className="format-action" type="button">Replace</button>
+                                    </div>
                                 )
                             })
                         :
