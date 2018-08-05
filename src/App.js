@@ -18,10 +18,10 @@ class App extends Component {
         getMockText().then(result => this.setState({textToEditor: result}));
     }
     testClick(proxy) {
-        //console.log('testClick', proxy.target.parentNode.dataset.word, proxy.target.dataset.word, proxy.target.closest('.someWord').dataset.word)
+        //console.log('testClick', proxy.target.closest('.someWord'))
         /* function for selecting one word, but not a whole sentence */
         this.selectText(`#someWord${proxy.target.closest('.someWord').dataset.word}`)
-        this.setState({selectedWord: proxy.target.closest('.someWord').dataset.word})
+        this.setState({selectedWord: proxy.target.closest('.someWord')})
     }
     selectText(node) {
         node = document.querySelectorAll(node)[0];
@@ -40,9 +40,8 @@ class App extends Component {
         }
     }
     findWordSynonyms() {
-        //console.log(document.querySelectorAll(this.state.selectedWord)[0].innerText);
         if(this.state.selectedWord) {
-            axios.get(`http://api.datamuse.com/words?ml=${document.querySelectorAll(this.state.selectedWord)[0].innerText}`)
+            axios.get(`http://api.datamuse.com/words?ml=${this.state.selectedWord.innerText}`)
             .then((response) => {
                 console.log(response);
                 this.setState({synonymsArray: response.data})
