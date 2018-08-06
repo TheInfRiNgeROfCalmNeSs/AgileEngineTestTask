@@ -38,7 +38,7 @@ class FileZone extends Component {
                                 return (
                                     <div key={key} className="synonym">
                                         word: {synonym.word}, score: {synonym.score}
-                                        <button className="format-action" type="button" data-synonym={key} onClick={this.replaceSelectedWordWithSynonym.bind(this)}>Replace</button>
+                                        <button className="format-action replace" type="button" data-synonym={key} onClick={this.replaceSelectedWordWithSynonym.bind(this)}>Replace</button>
                                     </div>
                                 )
                             })

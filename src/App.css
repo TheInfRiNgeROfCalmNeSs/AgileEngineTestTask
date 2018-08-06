@@ -28,3 +28,7 @@ main {
 button.format-action {
   cursor: pointer;
 }
+
+button.replace {
+  float: right;
+}
