@@ -21,7 +21,7 @@ class App extends Component {
         //console.log('testClick', proxy.target.closest('.someWord'))
         /* function for selecting one word, but not a whole sentence */
         this.selectText(`#someWord${proxy.target.closest('.someWord').dataset.word}`)
-        this.setState({selectedWord: proxy.target.closest('.someWord')})
+        this.setState({selectedWord: proxy.target.closest('.someWord'), synonymsArray: []})
     }
     selectText(node) {
         node = document.querySelectorAll(node)[0];
@@ -64,7 +64,7 @@ class App extends Component {
                 <main>
                     <ControlPanel findWordSynonyms={this.findWordSynonyms.bind(this)} />
                     <div className="hint">Click any Word, then apply style formatting or find some synonyms</div>
-                    <FileZone textToEditor={textInDivs} synonymsArray={this.state.synonymsArray} />
+                    <FileZone textToEditor={textInDivs} synonymsArray={this.state.synonymsArray} selectedWord={this.state.selectedWord} />
                 </main>
             </div>
         );
